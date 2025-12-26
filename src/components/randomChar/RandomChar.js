@@ -38,8 +38,15 @@ class RandomChar extends Component {
         })
     }
 
+    onCharLoading = () => {
+        this.setState({
+            loading: true
+        })
+    }
+
      updateChar = () => {
         const id = Math.floor(Math.random() * 20) + 1;
+        this.onCharLoading();
         this.marvelService
         .getCharacter(id)
         .then(this.onCharLoaded)
@@ -63,8 +70,8 @@ class RandomChar extends Component {
                 <p className="randomchar__title">
                     Or choose another one
                 </p>
-                <button className="button button__main" onClick={this.updateChar}>
-                    <div className="inner">try it</div>
+                <button className="button button__main" onClick={this.updateChar} >
+                    <div className="inner" >try it</div>
                 </button>
                 <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
             </div>

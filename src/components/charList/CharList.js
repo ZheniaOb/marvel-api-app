@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import MarvelService from '../../services/MarvelService';
 import './charList.scss';
-import abyss from '../../resources/img/abyss.jpg';
 
 class CharList extends Component {
     state = {
@@ -32,9 +31,11 @@ class CharList extends Component {
     }
     render() {
         const {charList} = this.state;
-        const items = charList.map((item, i) => {
+        const items = charList.map((item) => {
             return (
-                <li className="char__item" key={i}>
+                <li className="char__item"
+                 key={item.id}
+                 onClick = {() => this.props.onCharSelected(item.id)}>
                     <img src={item.thumbnail} alt={item.name}/>
                     <div className="char__name">{item.name}</div>
                 </li>
