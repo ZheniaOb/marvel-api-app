@@ -9,10 +9,10 @@ import decoration from '../../resources/img/vision.png';
 
 const App = () => {
 
-    const [selectedChar, setselectedChar] = useState(null);
+    const [selectedChar, setSelectedChar] = useState(null);
 
     const onCharSelected = (id) => {
-        setselectedChar(id);
+        setSelectedChar(id);
     }
 
         return (
